@@ -32,7 +32,7 @@ function play(id) {
         topLeft === topRight
     ) {
         alert(`${topLeft} wins!`);
-        reset();
+
         return;
     }
     if (
@@ -41,6 +41,7 @@ function play(id) {
         middleLeft === middleRight
     ) {
         alert(`${middleLeft} wins!`);
+
         return;
     }
     if (
@@ -49,6 +50,7 @@ function play(id) {
         bottomLeft === bottomRight
     ) {
         alert(`${bottomLeft} wins!`);
+
         return;
     }
     if (
@@ -103,15 +105,14 @@ function play(id) {
     }
 }
 
+const btn = document.getElementById('reset');
+btn.addEventListener('click', reset);
 function reset() {
-    console.log('reset the game');
-    board = [];
-    // board.innerText = 'Hello';
-    // topLeft.innerText = '';
-    // clicked.innerText = '';
+    // const table = document.querySelector('table');
+    // table.innerText = '';
+    const td = document.querySelectorAll('td');
+    for (let i = 0; i < td.length; i++) {
+        console.log(td[i]);
+        td[i].innerText = '';
+    }
 }
-
-// const btn = document.createElement('button');
-// btn.innerText = 'Reset';
-// const placeBtn = document.getElementById('player');
-// placeBtn.appendChild(btn);
