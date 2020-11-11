@@ -32,7 +32,7 @@ function play(id) {
         topLeft === topRight
     ) {
         alert(`${topLeft} wins!`);
-
+        realReset();
         return;
     }
     if (
@@ -41,7 +41,7 @@ function play(id) {
         middleLeft === middleRight
     ) {
         alert(`${middleLeft} wins!`);
-
+        realReset();
         return;
     }
     if (
@@ -50,7 +50,7 @@ function play(id) {
         bottomLeft === bottomRight
     ) {
         alert(`${bottomLeft} wins!`);
-
+        realReset();
         return;
     }
     if (
@@ -59,6 +59,7 @@ function play(id) {
         topLeft === bottomRight
     ) {
         alert(`${topLeft} wins!`);
+        realReset();
         return;
     }
     if (
@@ -67,6 +68,7 @@ function play(id) {
         bottomLeft === topRight
     ) {
         alert(`${bottomLeft} wins!`);
+        realReset();
         return;
     }
     if (
@@ -75,6 +77,7 @@ function play(id) {
         topLeft === bottomLeft
     ) {
         alert(`${topLeft} wins!`);
+        realReset();
         return;
     }
     if (
@@ -83,6 +86,7 @@ function play(id) {
         topMiddle === bottomMiddle
     ) {
         alert(`${topMiddle} wins!`);
+        realReset();
         return;
     }
     if (
@@ -91,6 +95,7 @@ function play(id) {
         topRight === bottomRight
     ) {
         alert(`${topRight} wins!`);
+        realReset();
         return;
     }
 
@@ -102,17 +107,22 @@ function play(id) {
     }
     if (boardFull === true) {
         alert("Cat's game, there is no winner");
+        realReset();
     }
 }
 
-const btn = document.getElementById('reset');
-btn.addEventListener('click', reset);
-function reset() {
-    // const table = document.querySelector('table');
-    // table.innerText = '';
-    const td = document.querySelectorAll('td');
-    for (let i = 0; i < td.length; i++) {
-        console.log(td[i]);
-        td[i].innerText = '';
+function realReset() {
+    // !not a real reset; well, it is sort of
+    const btn = document.getElementById('reset');
+    btn.addEventListener('click', reset);
+    function reset() {
+        // const table = document.querySelector('table');
+        // table.innerText = '';
+        const td = document.querySelectorAll('td');
+        for (let i = 0; i < td.length; i++) {
+            console.log(td[i]);
+            td[i].innerText = '';
+        }
     }
+    board = [];
 }
