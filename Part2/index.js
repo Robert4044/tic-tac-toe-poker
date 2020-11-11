@@ -8,6 +8,9 @@ btn.addEventListener('click', setCard);
 
 function setCard(e) {
     const card = document.getElementById(idInput.value);
+    if (!card) {
+        alert('please input diamonds, clubs, hearts, or spades');
+    }
 
     card.style.color = colorInput.value;
 }
